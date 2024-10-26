@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: GMT_Notes.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: alpha.bst
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Database file #1: GMT_Notes.bib
+You've used 8 entries,
+            2543 wiz_defined-function locations,
+            614 strings with 5378 characters,
+and the built_in function-call counts, 2615 in all, are:
+= -- 257
+> -- 92
+< -- 6
++ -- 28
+- -- 27
+* -- 175
+:= -- 436
+add.period$ -- 22
+call.type$ -- 8
+change.case$ -- 43
+chr.to.int$ -- 8
+cite$ -- 8
+duplicate$ -- 110
+empty$ -- 211
+format.name$ -- 41
+if$ -- 525
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 7
+newline$ -- 41
+num.names$ -- 24
+pop$ -- 44
+preamble$ -- 1
+purify$ -- 51
+quote$ -- 0
+skip$ -- 93
+stack$ -- 0
+substring$ -- 141
+swap$ -- 8
+text.length$ -- 6
+text.prefix$ -- 6
+top$ -- 0
+type$ -- 60
+warning$ -- 0
+while$ -- 25
+width$ -- 10
+write$ -- 100
