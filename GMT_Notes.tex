@@ -25,6 +25,8 @@
 
 \usepackage{bbm}
 \usepackage{esint}
+%\usepackage{resmes}
+\usepackage{comment}
 
 \usepackage[capitalise, noabbrev]{cleveref}
 \usepackage{mathtools}
@@ -84,19 +86,31 @@
 
 \begin{document}
 \maketitle
-\tableofcontents
-\newpage
+%\tableofcontents
+%\newpage
 
 \epigraph{\emph{No one will read this except you and me.}}{― F. Schulze}
 \section{Introduction}
+
+\begin{comment}
 In the summer of 2024, I completed a research project at the University of Warwick under the supervision of Professor Felix Schulze. This document contains a write-up of my work during this time.
+
 
 \cref{Preliminaries} is a brief summary of my background reading in preparation for this project. My main reference has been Leon Simon's \emph{Introduction to Geometric Measure Theory} \cite{Sim18}, which is an updated version of his classic text \emph{Lectures on Geometric Measure Theory}. Parts of this section have also been inspired by \cite{Rin22} and \cite{Mor16}. In an effort to keep this section short, many proofs have been omitted. Instead, citations have been provided throughout, and interested readers are encouraged to consult them for further details.
 
-\cref{Paper} presents an exposition on the research paper \cite{EWW02} by Tobias Ekholm, Brian White, and Daniel Wienholtz. This paper proves a sufficient condition for the embeddedness of minimal surfaces, and moreover imposes certain restrictions on the topology of such surfaces. In this section we examine these results in greater detail, and explore some of their fascinating applications.
+\cref{Paper} presents an exposition on the research paper \cite{EWW02} by Tobias Ekholm, Brian White, and Daniel Wienholtz. This paper proves a sufficient condition for the embeddedness of minimal surfaces, and moreover imposes certain restrictions on the topology of such surfaces. In this section we examine these results in greater detail, and explore some of their widespread applications.
 
 The work presented in this document is entirely expository. In particular, I claim absolutely no originality over its contents. I would like to thank all those who inspired and helped me along the way, for the quality of this work would be much poorer without them.
+\end{comment}
 
+In the summer of 2024, I completed a research project at the University of Warwick under the supervision of Professor Felix Schulze. This document contains a write-up of my work during this time.
+
+In particular, we present an exposition on the research paper \cite{EWW02} by Tobias Ekholm, Brian White, and Daniel Wienholtz. This paper proves a sufficient condition for the embeddedness of minimal surfaces, and moreover imposes certain restrictions on the topology of such surfaces. In this section we examine these results in greater detail, and explore some of their widespread applications.
+
+The present document is a shortened version of my full write-up, and was created for the purposes of public engagement. Interested readers can access a far more detailed version
+
+
+\begin{comment}  
 \section{Preliminaries}
 \label{Preliminaries}
 
@@ -127,9 +141,9 @@ A significant generalisation of the previous result is given by the \emph{Besico
 \begin{theorem}[Besicovitch Covering Theorem]
 Suppose \(\mathcal{F}\) is a collection of closed balls in \(\mathbb{R}^n\) such that the set \(A\) of their centres is bounded. Then for some \(N\), depending on \(n\), there exist sub-collections \(\mathcal{F}_1,\ldots,\mathcal{F}_N \subset \mathcal{F}\), each consisting of pairwise disjoint balls, such that \(\bigcup_{i=1}^{N}\mathcal{F}_i\) still covers \(A\). That is,
 \begin{equation}
-A \subset \bigcup_{i=1}^{N}\bigg(\bigcup_{F \in \mathcal{F}_i}F\bigg).
+A \subset \bigcup_{i=1}^{N}\biggl(\bigcup_{F \in \mathcal{F}_i}F\biggr).
 \end{equation}
-In particular, there is a finite or countable cover of \(A\), consisting of closed balls in \(\mathcal{F}\), such that every point of \(\mathbb{R}^n\) is contained in at most \(N\) of these balls.
+In particular, there is a finite or countable cover of \(A\), consisting of closed balls in \(\mathcal{F}\), such that every point of \(\mathbb{R}^{n}\) is contained in at most \(N\) of these balls.
 \end{theorem}
 
 Next, we present an improved version of the classical \emph{Vitali covering theorem}. Recall that, given a set \(A \subset \mathbb{R}^{n}\), a \emph{fine cover} of \(A\) is a family \(\mathcal{F}\) of closed balls such that every point in \(A\) is contained in a ball in \(\mathcal{F}\) of arbitrarily small radius.
@@ -143,7 +157,7 @@ We emphasise that the corresponding claim with open balls instead of closed ball
 \begin{example}
 Let \(A \coloneq \{0\} \cup \left\{\frac{1}{n} : n \in \mathbb{N}\right\}\), and define the fine cover \(\mathcal{F}\) of \(A\) to be
 \begin{equation}
-\mathcal{F} \coloneq \left\{\left(-\frac{1}{m}, \frac{1}{m}\right) : m \in \mathbb{N}\right\} \cup \left\{\left(\frac{1}{n}-\frac{1}{m}, \frac{1}{n} + \frac{1}{m}\right) : m, n \in \mathbb{N}, m > n \right\}.
+\mathcal{F} \coloneq \biggl\{\biggl(-\frac{1}{m}, \frac{1}{m}\biggr) : m \in \mathbb{N}\biggr\} \cup \biggl\{\biggl(\frac{1}{n}-\frac{1}{m}, \frac{1}{n} + \frac{1}{m}\biggr) : m, n \in \mathbb{N}, m > n \biggr\}.
 \end{equation}
 
 Let \(\mu\) be any positive Radon measure with \(\mu(\{a\}) > 0\) for all \(a \in A\). Then there is no finite or countable subcover of \(\mathcal{F}\) that covers \(\mu\)-almost all of \(A\). On the other hand, if we use closed intervals in the definition of \(\mathcal{F}\) then a finite subcover exists, consisting of the single interval \([-1,1]\).
@@ -153,28 +167,28 @@ Let \(\mu\) be any positive Radon measure with \(\mu(\{a\}) > 0\) for all \(a \i
 
 Suppose \((X,d)\) is a metric space, and let
 \begin{equation}
-\omega_k \coloneq \frac{\pi^{k/2}}{\Gamma\left(\frac{k}{2}+1\right)}, \ k \geqslant 0,
+\omega_k \coloneq \frac{\pi^{k/2}}{\Gamma\bigl(\frac{k}{2}+1\bigr)}, \ k \geqslant 0,
 \end{equation}
 where \(\Gamma\) is Euler's Gamma function. If \(k \in \mathbb{N}\), this is the volume of a \(k\)-dimensional unit ball in \(\mathbb{R}^k\).
 
 For \(k \geqslant 0\), we define the \(k\)-dimensional Hausdorff outer measure as the limit
 \begin{equation}
 \label{Hausdorff_Measure}
-\mathcal{H}^k(A) \coloneq \lim_{\delta \downarrow 0} \mathcal{H}^{k}_{\delta}(A), \ A \subset X,
+\mathcal{H}^{k}(A) \coloneq \lim_{\delta \downarrow 0} \mathcal{H}^{k}_{\delta}(A), \ A \subset X,
 \end{equation}
 where, for each \(\delta > 0\), \(\mathcal{H}^{k}_{\delta}\) is defined by taking  \(\mathcal{H}^{k}_{\delta}(\varnothing) \coloneq 0\) and
 \begin{equation}
 \label{Hausdorff_Measure_delta}
-\mathcal{H}^{k}_{\delta}(A) \coloneq \inf \sum_{i=1}^{\infty} \omega_k\left(\frac{\diam C_i}{2}\right)^{k}
+\mathcal{H}^{k}_{\delta}(A) \coloneq \inf \sum_{i=1}^{\infty} \omega_k\biggl(\frac{\diam C_{i}}{2}\biggr)^{k}
 \end{equation}
 for any non-empty \(A \subset X\). The infimum is taken over all countable collections \(C_1, C_2, \ldots\) of subsets of \(X\) such that \(\diam C_i < \delta\) and \(A \subset \bigcup_{i=1}^{\infty} C_i\). If no such collection exists, the right-hand side of \eqref{Hausdorff_Measure_delta} is taken to be \(+\infty\). The limit in \eqref{Hausdorff_Measure} always exists, since \(\mathcal{H}^{k}_{\delta}(A)\) is a decreasing function of \(\delta\).
 
 Note also that \(\mathcal{H}^0\) is exactly the counting measure.
 
 \begin{theorem}[Isodiametric Inequality]
-Let \(A \subset \mathbb{R}^n\). Then
+Let \(A \subset \mathbb{R}^{n}\). Then
 \begin{equation}
-\mathcal{L}^n(A) \leqslant \omega_{n}\left(\frac{\diam A}{2}\right)^{n}.
+\mathcal{L}^n(A) \leqslant \omega_{n}\biggl(\frac{\diam A}{2}\biggr)^{n}.
 \end{equation}
 \end{theorem}
 Thus, among all sets \(A \subset \mathbb{R}^n\) with a given diameter \(\lambda\), the ball with diameter \(\lambda\) has the largest \(\mathcal{L}^n\)-measure.
@@ -207,14 +221,14 @@ Let \(\mu\) be an outer measure on \(X\) such that all Borel sets are measurable
 \Theta^{*n}(\mu, A_{2}, x) \geqslant t \ \forall x \in A_{1} \implies t\mathcal{H}^{n}(A_{1}) \leqslant \mu(A_{2}).
 \end{equation}
 \end{theorem}
-
 Importantly, we are not assuming that the sets \(A_{1}\) and \(A_{2}\) are \(\mu\)-measurable.
-The curious reader might wonder why the Hausdorff measure appears in the above result. Note the factor of \(\omega_{n}\rho^{n}\) in the definition of the upper density, and recall that this is nothing more than the Hausdorff measure of the ball of radius \(\rho\) in \(\mathbb{R}^{n}\).
+
+The curious reader might wonder why the Hausdorff measure appears in the above result. Note the factor of \(\omega_{n}\rho^{n}\) in the definition of the upper density, and recall that this is nothing more than the Hausdorff measure of a ball of radius \(\rho\) in \(\mathbb{R}^{n}\).
 
 As a corollary, we can now prove the following \emph{uppper density theorem}:
 
 \begin{theorem}[Upper Density Theorem]
-If \(\mu\) is an outer measure on \(X\) such that all Borel sets are measurable, and if \(A\) is a \(\mu\)-measurable subset of X with \(\mu(A) < \infty\), then
+If \(\mu\) is an outer measure on \(X\) such that all Borel sets are measurable, and if \(A\) is a \(\mu\)-measurable subset of X with \(\mu(A) < +\infty\), then
 \begin{equation}
 \Theta^{*n}(\mu, A, x) = 0
 \end{equation}
@@ -222,14 +236,14 @@ for \(\mathcal{H}^{n}\)-almost every \(x \in X \setminus A\).
 \end{theorem}
 
 \begin{corollary}
-If \(A \subset \mathbb{R}^{n}\) is \(\mathcal{L}^{n}\)-measurable, then the density \(\Theta^{n}(\mathcal{L}^{n}, A, x)\) exists for \(\mathcal{L}^{n}\)-a.e. \(x \in \mathbb{R}^{n}\). Moreover, \(\Theta^{n}(\mathcal{L}^{n}, A, x) = \mathbbm{1}_{A}(x)\) for \(\mathcal{L}^{n}\)-a.e. \(x \in \mathbb{R}^{n}\).
+If \(A \subset \mathbb{R}^{n}\) is \(\mathcal{L}^{n}\)-measurable, then the density \(\Theta^{n}(\mathcal{L}^{n}, A, x)\) exists for \(\mathcal{L}^{n}\)-almost every \(x \in \mathbb{R}^{n}\). Moreover, \(\Theta^{n}(\mathcal{L}^{n}, A, x) = \mathbbm{1}_{A}(x)\) for \(\mathcal{L}^{n}\)-almost every \(x \in \mathbb{R}^{n}\).
 \end{corollary}
 
 We also introduce the particular notion of \emph{density at infinity}. For this, readers should first familiarise themselves with the \emph{extended monotonicity theorem} \ref{Extended Monotonicity}. Consider now a properly immersed minimal surface \(M \in \mathbb{R}^{n}\) without boundary. Then the density ratio \(\Theta(M, p, r)\) increases with \(r\), and so converges to a (potentially infinite) limit as \(r \rightarrow \infty\). Moreover, we have the inclusion
 \begin{equation}
 B(p,r) \subset B(q, r + \vert p-q \vert),
 \end{equation}
-from which it follows that the limit is independent of the point p, and can therefore be written unambiguously as \(\Theta(M)\). We call this value the \emph{density of} M \emph{at infinity}.
+from which it follows that the limit is independent of the point \(p\), and can therefore be written unambiguously as \(\Theta(M)\). We call this value the \emph{density of} \(M\) \emph{at infinity}.
 
 \subsubsection{Differentiation Theorems}
 
@@ -239,7 +253,7 @@ In this case, the \emph{upper density} \(\Theta^{*\mu}(\nu, x)\) of \(\nu\) with
 \begin{equation}
 \Theta^{*\mu}(\nu, x) \coloneq
 \begin{cases}
-\limsup\limits_{\smash{\rho \downarrow 0}} \frac{\nu(B_{\rho}(x))}{\mu(B_{\rho}(x))} & \text{for } x \in \operatorname{supp} \mu \cap \operatorname{supp} \nu, \\
+\limsup_{\rho \downarrow 0} \frac{\nu(B_{\rho}(x))}{\mu(B_{\rho}(x))} & \text{for } x \in \operatorname{supp} \mu \cap \operatorname{supp} \nu, \\
 \infty & \text{for } x \in \operatorname{supp} \nu \setminus \operatorname{supp} \mu, \\
 0 & \text{for } x \notin \operatorname{supp} \nu.
 \end{cases}
@@ -250,11 +264,11 @@ The \emph{lower density} of \(\nu\) with respect to \(\mu\) is defined analogous
 
 We will also require a few preliminary definitions. The \emph{support} of a measure \(\mu\) on \(X\), denoted \(\operatorname{supp} \mu\), is the set of all points \(x \in X\) such that \(\mu(U) > 0\) for all open neighbourhoods \(U\) of \(x\). For a measure \(\mu : \mathcal{B}(X) \rightarrow V\), the \emph{total variation measure} \(\norm{\mu}\) is defined as follows: for all Borel sets \(A \in \mathcal{B}(X)\), let
 \begin{equation}
-\norm{\mu}(A) \coloneq \sup\bigg\{\sum_{n=1}^{\infty} \norm{\mu(A_{n})} : (A_{n})_{n} \text{ is a partition of } X \text{ by Borel sets.}\bigg\}.
+\norm{\mu}\!(A) \coloneq \sup\biggl\{\sum_{n=1}^{\infty} \norm{\mu(A_{n})} : (A_{n})_{n} \text{ is a partition of } X \text{ by Borel sets.}\biggr\}.
 \end{equation}
 
 \begin{definition}
-Suppose  \((X, \mathcal{B}(X))\) is a measurable space, and consider two measures \(\mu : \mathcal{B}(X) \rightarrow [0, +\infty]\) and \(\nu : \mathcal{B}(X) \rightarrow V\), where \((V, \norm{\cdot})\) is a normed vector space. We say that \(\nu\) is \emph{absolutely continuous} with respect to \(\mu\) if, denoted \(\nu \ll \mu\), if \(\norm{\nu}(A) = 0\) for all \(A\) such that \(\mu(A) = 0\).
+Suppose  \((X, \mathcal{B}(X))\) is a measurable space, and consider two measures \(\mu : \mathcal{B}(X) \rightarrow [0, +\infty]\) and \(\nu : \mathcal{B}(X) \rightarrow V\), where \((V, \norm{\cdot})\) is a normed vector space. We say that \(\nu\) is \emph{absolutely continuous} with respect to \(\mu\), denoted \(\nu \ll \mu\), if \(\norm{\nu}\!(A) = 0\) for all \(A\) such that \(\mu(A) = 0\).
 \end{definition}
 
 The total variation is required in the above definition because the measure \(\nu\) is vector-valued.
@@ -271,7 +285,7 @@ exists in \(V\), and \(\nu\) has the \emph{Radon--Nikodym decomposition}
 \end{equation}
 The \emph{singular part} \(\nu^{s} : \mathcal{B}(\mathbb{R}^{n}) \rightarrow V\) is given by \(\nu^{s} \coloneq \nu \mres E\), where
 \begin{equation}
-E \coloneq (\mathbb{R}^{n} \setminus \operatorname{supp}\mu) \cup \bigg\{x \in \operatorname{supp}\mu : \lim_{\rho \downarrow 0} \frac{\norm{\nu}(B_{\rho}(x))}{\mu(B_{\rho}(x))} = \infty \bigg\}.
+E \coloneq (\mathbb{R}^{n} \setminus \operatorname{supp}\mu) \cup \biggl\{x \in \operatorname{supp}\mu : \lim_{\rho \downarrow 0} \frac{\norm{\nu}\!(B_{\rho}(x))}{\mu(B_{\rho}(x))} = \infty \biggr\}.
 \end{equation}
 \end{theorem}
 
@@ -286,7 +300,7 @@ where \(\frac{\diff\nu}{\diff\mu}\) is the \emph{Radon--Nikodym derivative}, def
 \begin{theorem}[Lebesgue Differentiation Theorem]
 Let \(\mu : \mathcal{B}(\mathbb{R}^{n}) \rightarrow [0, +\infty]\), and suppose \(f \in L^{1}(\mathbb{R}^{n}, \mathcal{B}(\mathbb{R}^{n}), \mu)\). Then
 \begin{equation}
-\lim_{\rho \downarrow 0} \fint_{B_{\rho}(x_{0})}\vert f(x) - f(x_{0}) \vert \diff\mu(x) = 0
+\lim_{\rho \downarrow 0} \fint_{B_{\rho}(x_{0})} \vert f(x) - f(x_{0}) \vert \diff\mu(x) = 0
 \end{equation}
 for \(\mu\)-almost every \(x_{0} \in \mathbb{R}^{n}\). That is, \(\mu\)-almost every \(x_{0} \in \mathbb{R}^{n}\) is a \emph{Lebesgue point} of \(f\) with respect to \(\mu\).
 \end{theorem}
@@ -304,9 +318,9 @@ Let \(\mu : \mathcal{B}(\mathbb{R}^{n}) \rightarrow [0, +\infty]\). Then \(\mu\)
 
 Let \((X,d)\) be a metric space, and recall that a function \(f \vcentcolon X \rightarrow \mathbb{R}\) is said to be  \emph{Lipschitz} if there exists \(L < \infty\) such that
 \begin{equation}
-\left|f(x) - f(y)\right| \leqslant L d(x,y)
+\vert f(x) - f(y) \vert \leqslant L d(x,y)
 \end{equation}
-for all \(x,y \in X\). The least such \(L\) is called the Lipschitz constant and is denoted by \(\lip f\).
+for all \(x,y \in X\). The least such \(L\) is called the \emph{Lipschitz constant} and is denoted by \(\lip f\).
 
 Lipschitz functions satisfy the following basic extension theorem:
 
@@ -322,7 +336,7 @@ If \(f\) is Lipschitz on \(\mathbb{R}^n\), then \(f\) is differentiable \(\mathc
 \begin{equation}
 \lim_{x \rightarrow x_0} \frac{f(x) - f(x_0) - \nabla f(x_0) \cdot (x-x_0)}{|x-x_0|} = 0
 \end{equation}
-for \(\mathcal{L}^n\)-a.e. \(x \in \mathbb{R}^n\).
+for \(\mathcal{L}^n\)-almost every \(x \in \mathbb{R}^n\).
 \end{theorem}
 
 Following a common theme in real analysis, we aim to approximate Lipschitz functions by functions which exhibit higher regularity. This can be done by the following approximation theorem:
@@ -351,11 +365,11 @@ If \(n \geqslant k\), define the \(k\)-dimensional Jacobian of \(f\) at \(x\) by
 \end{equation}
 Note that if \(n = k\), then both definitions agree and reduce to
 \begin{equation}
-\mathbf{J}_{n}f(x) = \vert\det Df(x)\vert,
+\mathbf{J}_{n}f(x) = \vert \det Df(x) \vert,
 \end{equation}
 which is the factor in the classical transformation formula for integrals.
 
-The first version of the area formula concerns maps defined on the flat space \(\mathbb{R}^n\). We will encounter another, more general version, in the following chapters.
+The first version of the area formula concerns maps defined on the flat space \(\mathbb{R}^n\). We will require another, more general version, in the following chapter.
 
 \begin{theorem}[Area Formula]
 Let \(f \vcentcolon \mathbb{R}^n \rightarrow \mathbb{R}^k\) be Lipschitz, with \(n \leqslant k\). Then, for every \(\mathcal{L}^n\)-measurable map \(g \vcentcolon \mathbb{R}^n \rightarrow \mathbb{R}\) it holds that
@@ -382,9 +396,9 @@ Using the area formula, we first check that the \(\mathcal{H}^1\) measure agrees
 as required.
 \end{example}
 
-\begin{example}[Submanifolds of \(\mathbb{R}^{n+k}\)]
-\label{Area_Formula_Submanifolds}
-\end{example}
+%\begin{example}[Submanifolds of \(\mathbb{R}^{n+k}\)]
+%\label{Area_Formula_Submanifolds}
+%\end{example}
 
 \begin{example}[\(n\)-dimensional graphs in \(\mathbb{R}^{n+1}\)]
 If \(U\) is a domain in \(\mathbb{R}^n\), and if \(M = \graph u\), where \(u \in C(U ; \mathbb{R})\), then \(M\) is globally represented by the map \(x \overset{f}{\longmapsto} (x, u(x))\). In this case,
@@ -406,7 +420,7 @@ In particular, if \(A \subset \mathbb{R}^{n}\) is \(\mathcal{L}^{n}\)-measurable
 \end{theorem}
 
 \begin{remark}
-The fibre \(f^{-1}(y)\) is not necessarily a smooth \((n-k)\)-dimensional submanifold of \(\mathbb{R}^{n}\), even if \(f \in C^{\infty}(\mathbb{R}^{n})\). In fact it need not be a manifold at all. Consider for example the function \(f \vcentcolon \mathbb{R}^{2} \rightarrow \mathbb{R}\) defined by \(f(x_{1}, x_{2}) \coloneq x_{2}^{2} - (x_{1}^3-3x_{1})\). Then \(f \in C^{\infty}(\mathbb{R}^2)\), but the fibre \(f^{-1}(2)\) shown in \cref{Fig: self-intersecting curve} is not a submanifold of \(\mathbb{R}^{2}\).
+The fibre \(f^{-1}(y)\) is not necessarily a smooth \((n-k)\)-dimensional submanifold of \(\mathbb{R}^{n}\), even if \(f \in C^{\infty}(\mathbb{R}^{n})\). In fact it need not be a manifold at all. Consider for example the function \(f \vcentcolon \mathbb{R}^{2} \rightarrow \mathbb{R}\) defined by \(f(x_{1}, x_{2}) \coloneq x_{2}^{2} - (x_{1}^3-3x_{1})\). Then \(f \in C^{\infty}(\mathbb{R}^2)\), but the fibre \(f^{-1}(2)\) shown in \cref{Fig: self-intersecting curve} is not a submanifold of \(\mathbb{R}^{2}\). Convince yourself that this does not violate the preimage theorem because \(2\) is not a regular value of \(f\).
 \end{remark}
 
 \begin{figure}
@@ -651,18 +665,18 @@ Now take \(\varepsilon \in (0,1)\) and a \(C^1\) function \(\varphi_{\varepsilon
 \begin{align}
 \varphi_{\varepsilon}'(t) \leqslant 0 &\text{ for all } t \in \mathbb{R}, \\ \varphi_{\varepsilon}(t) \equiv 1 &\text{ for all } t \leqslant 1, \text{ and}  \\ \varphi_{\varepsilon}(t) \equiv 0 &\text{ for all } t \geqslant 1 + \varepsilon,
 \end{align}
-Then we can use \eqref{monotonicity_stationary_2} with \(\gamma(r) = \varphi_{\varepsilon}\left(\frac{r}{\rho}\right)\) and \(\rho < \frac{R}{1 + \varepsilon}\). Since
+Then we can use \eqref{monotonicity_stationary_2} with \(\gamma(r) = \varphi_{\varepsilon}\Bigl(\frac{r}{\rho}\Bigr)\) and \(\rho < \frac{R}{1 + \varepsilon}\). Since
 \begin{equation}
-r\gamma'(r) = \frac{r}{\rho}\varphi_{\varepsilon}\left(\frac{r}{\rho}\right) = -\rho \frac{\partial}{\partial\rho}\left[\varphi_{\varepsilon}\left(\frac{r}{\rho}\right)\right],
+r\gamma'(r) = \frac{r}{\rho}\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr) = -\rho \frac{\partial}{\partial\rho}\biggl[\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\biggr],
 \end{equation}
 this gives
 \begin{equation}
 nI(\rho) - \rho I'(\rho) = -\rho J'(\rho),
 \end{equation}
 where
-\begin{align}
-I(\rho) = \int_{M}\varphi_{\varepsilon}\left(\frac{r}{\rho}\right) \diff\mu_{V} \ \text{ and } \ J(\rho) = \int_{M}\varphi_{\varepsilon}\left(\frac{r}{\rho}\right)|D^{\perp}r|^2 \diff\mu_{V}.
-\end{align}
+\begin{gather}
+I(\rho) = \int_{M}\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr) \diff\mu_{V} \quad \text{and} \quad J(\rho) = \int_{M}\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)|D^{\perp}r|^2 \diff\mu_{V}.
+\end{gather}
 Multiplying by \(\rho^{-n-1}\) and rearranging, we have
 \begin{equation}
 \label{monotonicity_stationary_3}
@@ -670,15 +684,15 @@ Multiplying by \(\rho^{-n-1}\) and rearranging, we have
 \end{equation}
 Note that \(\frac{\partial}{\partial\rho}\varphi_{\varepsilon}(r/\rho) \geqslant 0\) whenever \(\rho \leqslant r \leqslant (1+\varepsilon)\rho\), and \(\frac{\partial}{\partial\rho}\varphi_{\varepsilon}(r/\rho) = 0\) otherwise. Therefore,
 \begin{align}
-\int_{M}r^{-n}\frac{\partial}{\partial\rho}\varphi_{\varepsilon}\bigg(\frac{r}{\rho}\bigg)|D^{\perp}r|^{2}\diff\mu_{V} \hspace{-50pt} \\
-&\leqslant \int_{M}\rho^{-n}\frac{\partial}{\partial\rho}\varphi_{\varepsilon}\left(\frac{r}{\rho}\right)|D^{\perp}r|^{2}\diff\mu_{V} \\
-&\leqslant (1+\varepsilon)^n\int_{M}r^{-n}\frac{\partial}{\partial\rho}\varphi_{\varepsilon}\left(\frac{r}{\rho}\right)|D^{\perp}r|^{2}\diff\mu_{V}.
+\int_{M}r^{-n}\frac{\partial}{\partial\rho}\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr) \vert D^{\perp}r \vert^{2} \diff\mu_{V} \hspace{-50pt} \\
+&\leqslant \int_{M}\rho^{-n}\frac{\partial}{\partial\rho}\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr) \vert D^{\perp}r \vert^{2} \diff\mu_{V} \\
+&\leqslant (1+\varepsilon)^n\int_{M}r^{-n}\frac{\partial}{\partial\rho}\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr) \vert D^{\perp}r \vert^{2} \diff\mu_{V}.
 \end{align}
 The second integral is precisely \(\rho^{-n}J'(\rho)\), so we integrate \eqref{monotonicity_stationary_3} on the interval \([\sigma, \rho]\) to obtain:
 \begin{align}
-\int_{M}r^{-n}\left(\varphi_{\varepsilon}\left(\frac{r}{\rho}\right) - \varphi_{\varepsilon}\left(\frac{r}{\sigma}\right)\right)|D^{\perp}r|^{2}\diff\mu_{V} \hspace{-100pt} \\
+\int_{M}r^{-n}\biggl(\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr) - \varphi_{\varepsilon}\left(\frac{r}{\sigma}\right)\biggr) \vert D^{\perp}r \vert^{2} \diff\mu_{V} \hspace{-100pt} \\
 &\leqslant \rho^{-n}I(\rho) - \sigma^{-n}I(\sigma) \\
-&\leqslant (1+\varepsilon)^n\int_{M}r^{-n}\left(\varphi_{\varepsilon}\left(\frac{r}{\rho}\right) - \varphi_{\varepsilon} \left(\frac{r}{\sigma}\right)\right)|D^{\perp}r|^{2}\diff\mu_{V}.
+&\leqslant (1+\varepsilon)^n\int_{M}r^{-n}\biggl(\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr) - \varphi_{\varepsilon} \biggl(\frac{r}{\sigma}\biggr)\biggr) \vert D^{\perp}r \vert^{2} \diff\mu_{V}.
 \end{align}
 
 By letting \(\varepsilon \downarrow 0\), we make \(\varphi_{\varepsilon}\) decrease pointwise to the indicator function on \((-\infty, 1]\). Hence \(\varphi_{\varepsilon}(r/\rho)\) decreases to the indicator function on the ball of radius \(\rho\). We thus obtain the \emph{monotonicity formula} for stationary varifolds:
@@ -690,7 +704,7 @@ which is valid for \(0 < \sigma \leqslant \rho < R\) and provided that \(B_{R}(x
 
 Of course we also have the differentiated version of \eqref{Monotonicity Formula Stationary Case}, namely:
 \begin{equation}
-\frac{\!\diff}{\diff\rho}\bigg(\frac{\mu_{V}(B_{\rho}(x_0))}{\rho^{n}}\bigg) = \frac{\!\diff}{\diff\rho}\int_{B_{\rho}(x_0)}\frac{|D^{\perp}r|^2}{r^{n}}\diff\mu_{V}.
+\frac{\!\diff}{\diff\rho}\biggl(\frac{\mu_{V}(B_{\rho}(x_0))}{\rho^{n}}\biggr) = \frac{\!\diff}{\diff\rho}\int_{B_{\rho}(x_0)}\frac{\vert D^{\perp}r \vert^2}{r^{n}}\diff\mu_{V}.
 \end{equation}
 
 \begin{remark}
@@ -713,7 +727,7 @@ A further consequence is that the density \(\Theta^{n}(\mu_V, x_0)\) is upper se
 \end{equation}
 for every \(x_0 \in U\).
 
-To show this, take \(\rho, \varepsilon > 0\) with \(B_{\rho + \varepsilon}(x_0) \subset U\) and a sequence \((x_i)_{i}\) converging to \(x_0\). Then \(B_{\rho}(x_i) \subset B_{\rho + \varepsilon}(x_0)\) for all sufficiently large \(i\), and so it follows from monotonicity that
+To show this, take \(\rho, \varepsilon > 0\) such that \(B_{\rho + \varepsilon}(x_{0}) \subset U\), and a sequence \((x_{i})_{i}\) converging to \(x_{0}\). Then \(B_{\rho}(x_{i}) \subset B_{\rho + \varepsilon}(x_{0})\) for all sufficiently large \(i\), and so it follows from monotonicity that
 \begin{equation}
 \Theta^{n}(\mu_V, x_i) \leqslant \frac{\mu_V(B_{\rho}(x_i))}{\omega_{n}\rho^{n}} \leqslant \frac{\mu_V(B_{\rho + \varepsilon}(x_0))}{\omega_{n}\rho^{n}}
 \end{equation}
@@ -739,21 +753,21 @@ for all vector fields \(X \in C^{1}_{c}(U;\mathbb{R}^{n+k})\). Thus \(V\) is sta
 
 Now suppose that \(V = \underline{v}(M,\theta)\) has bounded generalised mean curvature \(\underline{H}\). In other words, there is some non-negative constant \(\Lambda\) such that
 \begin{equation}
-|\underline{H}| \leqslant \Lambda \text{ on } M \cap U.
+|\underline{H}| \leqslant \Lambda \enspace \text{on} \enspace M \cap U.
 \end{equation}
 
 We now proceed exactly as in the stationary case, with the same choices for the vector field \(X\), thus giving
 \begin{equation}
 \label{monotonicity_linfty_1}
-\frac{\!\diff}{\diff\rho}(\rho^{-n}I(\rho)) = \rho^{-n}J'(\rho) - E_{0}(\rho), \ \ 0 < \rho < R,
+\frac{\!\diff}{\diff\rho}(\rho^{-n}I(\rho)) = \rho^{-n}J'(\rho) - E_{0}(\rho), \quad 0 < \rho < R,
 \end{equation}
 where \(I\) and \(J\) are as above, and
 \begin{equation}
-E_{0}(\rho) = \rho^{-n}\int_{M}\rho^{-1}\langle \underline{H}, x - x_{0} \rangle \varphi_{\varepsilon}\left(\frac{r}{\rho}\right)\diff\mu_V.
+E_{0}(\rho) = \rho^{-n}\int_{M}\rho^{-1}\langle \underline{H}, x - x_{0} \rangle \varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\diff\mu_V.
 \end{equation}
 Since \(\varphi_{\varepsilon}(r/\rho) = 0\) for \(r \geqslant (1 + \varepsilon) \rho\), we have that
 \begin{equation}
-|E_0(\rho)| \leqslant \Lambda_{\varepsilon}\rho^{-n}I(\rho),
+\vert E_0(\rho) \vert \leqslant \Lambda_{\varepsilon}\rho^{-n}I(\rho),
 \end{equation}
 where \(\Lambda_{\varepsilon} = (1 + \varepsilon)\Lambda\). Hence we can write \(E_0(\rho) = E(\rho)\rho^{-n}I(\rho)\), where \(E(\rho) \in [-\Lambda_{\varepsilon}, \Lambda_{\varepsilon}]\) for each \(\rho \in (0, R)\). Multiplying both sides of \eqref{monotonicity_linfty_1} by the integrating factor \(F(\rho) = \exp(\int_{0}^{\rho}E(t)\diff t) \in [e^{-\Lambda_{\varepsilon}\rho}, e^{\Lambda_{\varepsilon}\rho}]\), we obtain
 \begin{equation}
@@ -771,34 +785,34 @@ where \(0 < \sigma \leqslant \rho < R\), \(F(\rho) \in \left[e^{-\Lambda\rho}, e
 We continue to assume that \(U\) is open in \(\mathbb{R}^{n+k}\) and that \(V = \underline{v}(M, \theta)\) is a rectifiable \(n\)-varifold in \(U\) with generalised mean curvature vector \(\underline{H}\). We proceed exactly as before to obtain
 \begin{equation}
 \label{monotonicity_Lp_1}
-\frac{\!\diff}{\diff\rho}(\rho^{-n}I(\rho)) = \rho^{-n}J'(\rho) - \rho^{-n}\int_{U}\rho^{-1} \langle \underline{H}, x - x_{0}\rangle \varphi_{\varepsilon}\bigg(\frac{r}{\rho}\bigg)\diff\mu_V
+\frac{\!\diff}{\diff\rho}(\rho^{-n}I(\rho)) = \rho^{-n}J'(\rho) - \rho^{-n}\int_{U}\rho^{-1} \langle \underline{H}, x - x_{0}\rangle \varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\diff\mu_V
 \end{equation}
 This time, however, we assume that \(\underline{H}\) is merely an \(L^p\) function rather than \(L^{\infty}\). In particular, we assume that \(p > n\) and
 \begin{equation}
-\left(R^{p-n}\int_{B_R(x_0)}|\underline{H}|^p \diff\mu_V\right)^{\frac{1}{p}} \leqslant \kappa\Lambda,
+\biggl(R^{p-n}\int_{B_R(x_0)}|\underline{H}|^p \diff\mu_V\biggr)^{\frac{1}{p}} \leqslant \kappa\Lambda,
 \end{equation}
 where \(\Lambda\) is a constant to be chosen, and \(\kappa = \frac{p}{4(p-n)}\) is there to simplify the final form of the monotonicity formula.
 
 
-Recall that \(I(\rho) = \int_{M}\varphi_{\varepsilon}(\frac{r}{\rho})\diff\mu_V\), and moreover that \(\varphi_{\varepsilon}(\frac{r}{\rho}) = 0\) whenever \(r \geqslant (1+\varepsilon)\rho\). Therefore, we may focus our attention on those values of \(\rho\) for which \(\rho^{-1} \leqslant (1 + \varepsilon)r^{-1}\). Furthermore, we can restrict our domain of integration from \(U\) to \(B_R(x_0)\). We have that
+Recall that \(I(\rho) = \int_{M}\varphi_{\varepsilon}\bigl(\frac{r}{\rho}\bigr)\diff\mu_V\), and moreover that \(\varphi_{\varepsilon}\bigl(\frac{r}{\rho}\bigr) = 0\) whenever \(r \geqslant (1+\varepsilon)\rho\). Therefore, we may focus our attention on those values of \(\rho\) for which \(\rho^{-1} \leqslant (1 + \varepsilon)r^{-1}\). Furthermore, we can restrict our domain of integration from \(U\) to \(B_R(x_0)\). We have that
 \begin{equation}
-\left|\rho^{-n}\int_{U}\rho^{-1} \langle \underline{H}, x - x_{0} \rangle \varphi_{\varepsilon}\left(\frac{r}{\rho}\right)\diff \mu_V \right| \leqslant \rho^{-n} \int_{U}\rho^{-1}|x - x_0| \left|\underline{H}\right| \left|\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\right| \diff\mu_V.
+\biggl|\rho^{-n}\int_{U}\rho^{-1} \langle \underline{H}, x - x_{0} \rangle \varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\diff \mu_V \biggr| \leqslant \rho^{-n} \int_{U} \rho^{-1} \vert x - x_0 \vert \vert\underline{H}\vert \biggl|\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\biggr| \diff\mu_V.
 \end{equation}
-Note that \(\rho^{-1}|x - x_0| \leqslant (1 + \varepsilon)r^{-1}|x - x_0| = 1 + \varepsilon\), so we have
+Note that \(\rho^{-1} \vert x - x_{0} \vert \leqslant (1 + \varepsilon) r^{-1} \vert x - x_{0} \vert = 1 + \varepsilon\), so we have
 \begin{equation}
-\rho^{-n} \int_{U}\rho^{-1}|x - x_0| \left|\underline{H}\right|\left|\varphi_{\varepsilon}\left(\frac{r}{\rho}\right)\right| \diff\mu_V \leqslant (1 + \varepsilon)\rho^{-n}\int_{B_R(x_0)}\left|\underline{H}\right|\left|\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\right| \diff\mu_V.
+\rho^{-n} \int_{U}\rho^{-1} \vert x - x_{0} \vert \vert \underline{H} \vert \biggl|\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\biggr| \diff\mu_V \leqslant (1 + \varepsilon)\rho^{-n}\int_{B_R(x_{0})} \vert \underline{H} \vert \biggl|\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\biggr| \diff\mu_V.
 \end{equation}
-Applying Hölder's inequality, we have
+Applying H{\"o}lder's inequality, we have
 \begin{equation}
-\int_{B_R(x_0)}\left|\underline{H}\right|\left|\varphi_{\varepsilon}\left(\frac{r}{\rho}\right)\right| \diff\mu_V \leqslant \norm{\underline{H}}_{L^{\!^p}} \left(\int_{B_R(x_0)}\left|\varphi_{\varepsilon}\left(\frac{r}{\rho}\right)\right|^{\frac{p}{p-1}}\diff\mu_V \right)^{1-\frac{1}{p}}.
+\int_{B_R(x_{0})} \vert \underline{H} \vert \biggl|\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\biggr| \diff\mu_V \leqslant \norm{\underline{H}}_{L^{\!^p}} \biggl(\int_{B_R(x_0)}\biggl|\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\biggr|^{\frac{p}{p-1}}\diff\mu_V \biggr)^{1-\frac{1}{p}}.
 \end{equation}
 Note that \(0 \leqslant \varphi_{\varepsilon} \leqslant 1\) and \(\frac{p}{p-1} < 1\), so
 \begin{equation}
-\left(\int_{B_R(x_0)}\left|\varphi_{\varepsilon}\left(\frac{r}{\rho}\right)\right|^{\frac{p}{p-1}}\diff\mu_V\right)^{1-\frac{1}{p}} \leqslant \left(\int_{M}\varphi_{\varepsilon}\left(\frac{r}{\rho}\right)\diff\mu_V\right)^{1-\frac{1}{p}} = \left(I(\rho)\right)^{1-\frac{1}{p}}.
+\biggl(\int_{B_R(x_0)}\biggl|\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\biggr|^{\frac{p}{p-1}}\diff\mu_V\biggr)^{1-\frac{1}{p}} \leqslant \biggl(\int_{M}\varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\diff\mu_V\biggr)^{1-\frac{1}{p}} = \left(I(\rho)\right)^{1-\frac{1}{p}}.
 \end{equation}
 Putting all this together gives
 \begin{align}
-\left|\rho^{-n}\int_{U}\rho^{-1} \langle \underline{H}, x - x_{0} \rangle \varphi_{\varepsilon}\left(\frac{r}{\rho}\right)\diff \mu_V \right| \hspace{-120pt} \\ &\leqslant (1 + \varepsilon)\rho^{-n}\norm{\underline{H}}_{L^{\!^p}}(I(\rho))^{1-\frac{1}{p}} \\ &= (1 + \varepsilon)\rho^{-\frac{n}{p}}\norm{\underline{H}}_{L^{\!^p}}(\rho^{-n}I(\rho))^{1-\frac{1}{p}} \\ &= (1 + \varepsilon)R^{-1}\left(\frac{\rho}{R}\right)^{-\frac{n}{p}}\left(R^{p-n}\int_{B_R(x_0)}|\underline{H}|^p \diff \mu_V \right)^{\frac{1}{p}}(\rho^{-n}I(\rho))^{1-\frac{1}{p}} \\ &\leqslant 2\kappa\Lambda R^{-1}\left(\frac{\rho}{R}\right)^{-\frac{n}{p}}(1 + \rho^{-n}I(\rho)),
+\biggl|\rho^{-n}\int_{U}\rho^{-1} \langle \underline{H}, x - x_{0} \rangle \varphi_{\varepsilon}\biggl(\frac{r}{\rho}\biggr)\diff \mu_V \biggr| \hspace{-120pt} \\ &\leqslant (1 + \varepsilon)\rho^{-n}\norm{\underline{H}}_{L^{\!^p}}(I(\rho))^{1-\frac{1}{p}} \\ &= (1 + \varepsilon)\rho^{-\frac{n}{p}}\norm{\underline{H}}_{L^{\!^p}}(\rho^{-n}I(\rho))^{1-\frac{1}{p}} \\ &= (1 + \varepsilon)R^{-1}\Bigl(\frac{\rho}{R}\Bigr)^{-\frac{n}{p}}\biggl(R^{p-n}\int_{B_R(x_0)}|\underline{H}|^p \diff \mu_V \biggr)^{\frac{1}{p}}(\rho^{-n}I(\rho))^{1-\frac{1}{p}} \\ &\leqslant 2\kappa\Lambda R^{-1}\Bigl(\frac{\rho}{R}\Bigr)^{-\frac{n}{p}}(1 + \rho^{-n}I(\rho)),
 \end{align}
 where \(\rho < \frac{R}{1 + \varepsilon}\). In the last step we used the fact that \(a^{1 - \frac{1}{p}} \leqslant 1 + a\) whenever \(a \geqslant 0\).
 
@@ -806,9 +820,9 @@ Using this bound, we can rewrite equation \eqref{monotonicity_Lp_1} as follows:
 \begin{equation}
 \frac{\!\diff}{\diff\rho}(\rho^{-n}I(\rho)) = \rho^{-n}\frac{\!\diff}{\diff\rho}J(\rho) - F_0(\rho)(1 + \rho^{-n}I(\rho)),
 \end{equation}
-where \(|F_0(\rho)| \leqslant 2\kappa\Lambda R^{-1}\left(\frac{\rho}{R}\right)^{-\frac{n}{p}}\). After multiplying through by the integrating factor
+where \(|F_0(\rho)| \leqslant 2\kappa\Lambda R^{-1}\bigl(\frac{\rho}{R}\bigr)^{-\frac{n}{p}}\). After multiplying through by the integrating factor
 \begin{equation}
-F(\rho) = \exp\left(\int_{0}^{\rho}F_0(t)\diff t\right),
+F(\rho) = \exp\biggl(\int_{0}^{\rho}F_0(t)\diff t\biggr),
 \end{equation}
 we obtain
 \begin{equation}
@@ -818,33 +832,34 @@ where \(0 < \rho < \frac{R}{1 + \varepsilon}\) and \(E(\rho) = F(\rho) - F(0) = 
 
 Since 
 \begin{equation}
-\int_{0}^{\rho}\vert F_{0}(t)\vert \diff t \leqslant \frac{1}{2}\Lambda\left(\frac{\rho}{R}\right)^{1-\frac{n}{p}}
+\int_{0}^{\rho}\vert F_{0}(t)\vert \diff t \leqslant \frac{1}{2}\Lambda\Bigl(\frac{\rho}{R}\Bigr)^{1-\frac{n}{p}}
 \end{equation}
 and 
 \begin{equation}
-\vert F(\rho) - F(0)\vert = \bigg\vert \int_{0}^{\rho}F'(t)\diff t\bigg\vert \leqslant e^{\frac{1}{2}\Lambda}\int_{0}^{\rho}\vert F_{0}(t) \vert \diff t,
+\vert F(\rho) - F(0)\vert = \biggl| \int_{0}^{\rho}F'(t)\diff t\biggr| \leqslant e^{\frac{1}{2}\Lambda}\int_{0}^{\rho}\vert F_{0}(t) \vert \diff t,
 \end{equation}
 we then have the following bounds:
 \begin{equation}
 \begin{cases}
-\exp(-\Lambda) \leqslant \exp\left(-\frac{1}{2}\Lambda\left(\frac{\rho}{R}\right)^{1-\frac{n}{p}}\right) \leqslant F(\rho) \leqslant \exp\left(\frac{1}{2}\Lambda\left(\frac{\rho}{R}\right)^{1-\frac{n}{p}}\right) \leqslant \exp(\Lambda), \\
+\exp(-\Lambda) \leqslant \exp\Bigl(-\frac{1}{2}\Lambda\bigl(\frac{\rho}{R}\bigr)^{1-\frac{n}{p}}\Bigr) \leqslant F(\rho) \leqslant \exp\Bigl(\frac{1}{2}\Lambda\bigl(\frac{\rho}{R}\bigr)^{1-\frac{n}{p}}\Bigr) \leqslant \exp(\Lambda), \\
 \\
-\vert E(\rho)\vert \leqslant \frac{1}{2}\exp\left(\frac{1}{2}\Lambda\left(\frac{\rho}{R}\right)^{1-\frac{n}{p}}\right),
+\vert E(\rho)\vert \leqslant \frac{1}{2}\exp\Bigl(\frac{1}{2}\Lambda\bigl(\frac{\rho}{R}\bigr)^{1-\frac{n}{p}}\Bigr),
 \end{cases}
 \end{equation}
 where \(0 < \rho \leqslant R\). In particular, if \(\Lambda \leqslant 1\) we have that
 \begin{equation}
-\vert E(\rho) \vert \leqslant \Lambda\left(\frac{\rho}{R}\right)^{1-\frac{n}{p}},
+\vert E(\rho) \vert \leqslant \Lambda\Bigl(\frac{\rho}{R}\Bigr)^{1-\frac{n}{p}},
 \end{equation}
 so we may proceed exactly as before, integrating from \(\rho\) to \(\sigma\) and letting \(\varepsilon \downarrow 0\) to obtain:
 \begin{equation}
-\left[\left(F(\tau)\tau^{-n}\mu_{V}(B_{\rho}(x_{0})) + E(\tau)\right)\right]_{\tau = \sigma}^{\tau = \rho} = G(\rho,\sigma) \int_{B_{\rho}(x_{0}) \setminus B_{\sigma}(x_{0})} \frac{\vert D^{\perp}r\vert^{2}}{r^{n}}\diff \mu_{V},
+\bigl[\bigl(F(\tau)\tau^{-n}\mu_{V}(B_{\rho}(x_{0})) + E(\tau)\bigr)\bigr]_{\tau = \sigma}^{\tau = \rho} = G(\rho,\sigma) \int_{B_{\rho}(x_{0}) \setminus B_{\sigma}(x_{0})} \frac{\vert D^{\perp}r \vert^{2}}{r^{n}} \diff\mu_{V},
 \end{equation}
-where \(G(\rho, \sigma) \in [e^{-\Lambda}, e^{\Lambda}]\) and \(0 < \sigma \leqslant \rho \leqslant R\), so the above bounds hold. In particular, the function
+where \(G(\rho, \sigma) \in \bigl[e^{-\Lambda}, e^{\Lambda}\bigr]\) and \(0 < \sigma \leqslant \rho \leqslant R\), so the above bounds hold. In particular, the function
 \begin{equation}
 \rho \longmapsto\!F(\rho)\rho^{-n}\mu_{V}(B_{\rho}(x_0)) + E(\rho)
 \end{equation}
 is increasing on the interval \((0, R]\). Arguing as above, we can conclude that the density \(\Theta^{n}(\mu_{V}, x_{0})\) exists for all \(x_{0} \in U\), and is an upper semicontinuous function on \(U\).
+\end{comment}
 
 \section{On the Embeddedness of Minimal Surfaces}
 \label{Paper}
@@ -879,11 +894,12 @@ and let \(M' \coloneq M \cup E\). Then the density ratio
 \end{equation}
 is an increasing function of \(r\) for all \(r > 0\). That is,
 \begin{equation}
-\frac{\!\diff}{\diff r}\bigg(\frac{\mathcal{H}^{n}(M' \cap B(p,r))}{\omega_{n}r^{n}}\bigg) \geqslant 0,
+\frac{\!\diff}{\diff r}\biggl(\frac{\mathcal{H}^{n}(M' \cap B(p,r))}{\omega_{n}r^{n}}\biggr) \geqslant 0,
 \end{equation}
 with equality if and only if \(M'\) is a cone.
 \end{theorem}
 
+\begin{comment}
 \begin{proof}
 Without loss of generality, we may assume that \(p = 0\). We denote by \(M_{r}\), \(E_{r}\), \(M_{r}'\), and \(\Gamma_{r}\) respectively the portions of \(M\), \(E\), \(M'\), and \(\Gamma\) which lie inside the ball \(B(0, r)\).  
 
@@ -921,6 +937,7 @@ A'(r) - nr^{-1}A(r) \geqslant 0,
 \end{equation}
 so \(\frac{\!\diff}{\diff r} (r^{-n}A(r)) \geqslant 0\). But \(r^{-n}A(r)\) is exactly the density ratio (up to a constant multiple of \(\omega_{n}\)), so we are done.
 \end{proof}
+\end{comment}
 
 \subsection{Interior Regularity}
 
@@ -941,6 +958,7 @@ Let \(M\) be a minimal surface in \(\mathbb{R}^{n}\) with rectifiable boundary \
 with equality if and only if \(M = \operatorname{Cone}(\Gamma, p)\).
 \end{theorem}
 
+\begin{comment}
 \begin{proof}
 Since \(\Gamma\) is rectifiable, we can assume that \(\operatorname{Length}(\Pi_{p}(\Gamma)) < \infty\) or, equivalently, that \(\Theta^{2}(\operatorname{Cone}(\Gamma, p), p) < \infty\). 
 
@@ -970,6 +988,7 @@ from which we have that
 \end{equation}
 Since \(\Pi_{p}\Gamma\) has finite length, the mapping \(A \mapsto \operatorname{Length}(\Pi_{p}\Gamma \vert_{A})\) defines a finite Borel measure on \(G\), where \(G\) is a parameter domain for \(\Gamma \setminus \{p\}\). As \(r \rightarrow 0\), \(\Gamma^{-1}(\mathbb{R}^{n} \setminus B(p,r))\) exhausts \(G\), and thus \(\operatorname{Length}(\Pi_{p}(\Gamma \cap B(p, r)))\) tends to \(0\). Therefore we get \(\Theta^{2}(E, p, r) \rightarrow 0\), as required.
 \end{proof}
+\end{comment}
 
 \begin{theorem}[{\cite[Theorem 1.1]{EWW02}}]
 \label{Interior_Regularity_2}
@@ -987,6 +1006,10 @@ Equivalently,
 \Theta^{2}(\operatorname{Cone}(\Gamma, p), p) \leqslant \frac{1}{2\pi}\operatorname{TotalCurvature}(\Gamma).
 \end{equation}
 \end{theorem}
+
+Two proofs can be found in \cite{EWW02}, one using the Gau\ss--Bonnet theorem, and a second using the integral geometric formulas from \cite{Mil50}.
+
+\begin{comment}
 We give a proof based on the Gau\ss --Bonnet theorem. The paper also contains a second proof using integral geometry.
 
 \begin{proof}
@@ -1007,6 +1030,7 @@ The first of integrals above is equal to the length of \(\Pi_{p}\Gamma\), while 
 
 This completes the proof when \(\Gamma\) is smooth. If \(\Gamma\) is polygonal, we approximate it by smooth curves. For more general curves, we take the supremum over all inscribed polygonal curves.
 \end{proof}
+\end{comment}
 
 We can now combine these intermediate results to improve on the interior regularity of our surface:
 
@@ -1015,6 +1039,7 @@ We can now combine these intermediate results to improve on the interior regular
 Let \(\Gamma\) be a simple closed curve in \(\mathbb{R}^{n}\) with total curvature at most \(4\pi\), and let \(M\) be a minimal surface with boundary \(\Gamma\). Then the interior of \(M\) is embedded, and contains no branch points.
 \end{theorem}
 
+\begin{comment}
 \begin{proof}
 Since \(\Gamma\) has finite total curvature, \cref{Basic_Property_1} implies that it is also rectifiable, so we may apply Theorems \ref{Interior_regularity_basic_estimate} and \ref{Interior_Regularity_2}. If \(M\) is contained in a cone, then both its mean and scalar curvatures vanish, and so \(M\) is locally planar. If \(M\) is not contained in any cone, then we have a strict inequality in \cref{Interior_regularity_basic_estimate}, and so we have the following estimate:
 \begin{equation}
@@ -1022,6 +1047,7 @@ Since \(\Gamma\) has finite total curvature, \cref{Basic_Property_1} implies tha
 \end{equation}
 But we know that the density of \(M\) at any interior branch point or self-intersection point is at least \(2\), so \(p\) cannot be such a point. Hence the interior of \(M\) must be smoothly embedded.
 \end{proof}
+\end{comment}
 
 From \cref{Interior_Regularity_3}, the F{\'a}ry--Milnor theorem follows as a simple corollary.  This is a fundamental result linking the geometry and topology of a simple closed curve in \(\mathbb{R}^{3}\). It was proven independently by Istv{\'a}n F{\'a}ry in 1949 and by John Milnor in 1950.
 
@@ -1050,6 +1076,7 @@ Let \(\Gamma\) be a simple closed curve in \(\mathbb{R}^{n}\) with finite total 
 where \(\theta\) is the exterior angle to \(\Gamma\) at \(p\).
 \end{theorem}
 
+\begin{comment}  
 \begin{proof}
 For \(r > 0\) sufficiently small, let \(a_{r}\) and \(b_{r}\) be the intersections of \(\Gamma\) with \(\partial B(p, r)\). Let \(\theta (r)\) be the exterior angle of the triangle \(\triangle a_{r} p b_{r}\) at the vertex \(p\). Let \(q\) be a point sufficiently close to \(p\) such that \(p\) is in the interior of the triangle \(\triangle a_{r} q b_{r}\), but not in the line segments \(\overline{a_{r} q}\) or \(\overline{q b_{r}}\).
 
@@ -1069,6 +1096,8 @@ We now let \(q \rightarrow p\) to obtain:
 
 Letting \(r \rightarrow 0\) yields the required result.
 \end{proof}
+\end{comment}
+
 
 We are now ready to prove regularity at the boundary. We first do this for \emph{smooth} boundary curves, before dealing with more general curves.
 
@@ -1076,6 +1105,7 @@ We are now ready to prove regularity at the boundary. We first do this for \emph
 Let \(\Gamma\) be a smooth simple curve in \(\mathbb{R}^{n}\) with total curvature at most \(4\pi\), and let \(M\) be a minimal surface with boundary \(\Gamma\). Then \(M\) is a smoothly embedded manifold with boundary.
 \end{theorem}
 
+\begin{comment}  
 \begin{proof}
 We know from \cref{Interior_Regularity_3} that the interior of \(M\) is smoothly embedded. Now pick a point \(p \in \Gamma\). As in the proof of  \cref{Interior_Regularity_3}, we may assume a strict inequality in \ \cref{Interior_regularity_basic_estimate}. Then by Theorems \ref{Interior_regularity_basic_estimate} and \ref{Boundary_Regularity_1}, we have that
 \begin{equation}
@@ -1083,10 +1113,12 @@ We know from \cref{Interior_Regularity_3} that the interior of \(M\) is smoothly
 \end{equation}
 But any boundary branch point has density at least \(3/2\), and similarly for any point at which \(M\) is not embedded.
 \end{proof}
+\end{comment}
+
 
 \subsection{Boundaries with Corners}
 
-We now consider boundaries with less regularity, such as ones that include corners. In the proof of the following theorem, we make use of the following fact: any tangent cone to a \(2\)-dimensional minimal variety (such as a stationary integral varifold) intersects the unit sphere in a finite collection of geodesic arcs.
+We now consider boundaries with less regularity, such as ones that include corners. In the proof of the theorem below, we make use of the following fact: any tangent cone to a \(2\)-dimensional minimal variety (such as a stationary integral varifold) intersects the unit sphere in a finite collection of geodesic arcs.
 
 \begin{theorem}[{\cite{EWW02}, Theorem 4.1}]
 \label{Boundary_Corners}
@@ -1099,6 +1131,7 @@ Let \(\Gamma\) be a simple closed curve in \(\mathbb{R}^{n}\) with total curvatu
 \end{enumerate}
 \end{theorem}
 
+\begin{comment}
 \begin{proof}
 Let \(T\) be a tangent cone to \(M\) at \(p\). Since \(p \in \Gamma\), the cone \(T\) consists of two rays with an interior angle of \(\pi - \theta\). We now consider the intersection \(S\) of \(T\) with the unit sphere. Then \(S\) will consist of one or more geodesic curves. This is because the intersection of the tangent cone with the unit sphere is a one-dimensional varifold that is stationary in the sphere. But such one-dimensional stationary varifolds must consist of geodesic arcs.
 
@@ -1124,6 +1157,8 @@ Note that this forces \(k = 0\). If \(p\) is a cusp (so \(\theta = \pi)\), then 
 
 Finally, if \(p \in \Gamma\) coincided with an interior point of \(M\), then \(S\) would indeed contain at least one great circle, which we have just demonstrated is not possible. Therefore \(M\) is embedded.
 \end{proof}
+\end{comment}
+
 
 \subsection{Nondisc-type Surfaces}
 \label{section: Nondisc-type Surfaces}
@@ -1205,7 +1240,7 @@ By the triangle inequality for geodesic distances in the unit sphere, we have th
 \begin{theorem}[{\cite{EWW02}, Theorem 10.3}]
 Suppose \(\gamma \vcentcolon [A,B] \rightarrow \mathbb{R}^{n}\) is an injective curve of finite total curvature. Then the strong one-sided tangents
 \begin{gather}
-T^{+}(a) = \lim_{\substack{a \leqslant x < y \\ y \rightarrow a}} T_{xy} \qquad \text{and} \qquad T_{-}(b) = \lim_{\substack{x < y \leqslant b \\ x \rightarrow b}} T_{xy}
+T^{+}(a) = \lim_{\substack{a \leqslant x < y \\ y \rightarrow a}} T_{xy} \quad \text{and} \quad T_{-}(b) = \lim_{\substack{x < y \leqslant b \\ x \rightarrow b}} T_{xy}
 \end{gather}
 exist for every \(a \in [A, B)\) and every \(b \in (A,B]\). Furthermore, \(T^{+}(x)\) and \(T_{-}(x)\) both approach \(T^{+}(a)\) as \(x\) approaches \(a\) from the right, and they both approach \(T_{-}(b)\) as \(x\) approaches \(b\) from the left.
 \end{theorem}
