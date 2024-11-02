@@ -20,7 +20,7 @@
     citecolor=blue,
     filecolor=black,
     linkcolor=blue,
-    urlcolor=black
+    urlcolor=blue
 }
 
 \usepackage{bbm}
@@ -107,7 +107,7 @@ In the summer of 2024, I completed a research project at the University of Warwi
 
 In particular, we present an exposition on the research paper \cite{EWW02} by Tobias Ekholm, Brian White, and Daniel Wienholtz. This paper proves a sufficient condition for the embeddedness of minimal surfaces, and moreover imposes certain restrictions on the topology of such surfaces. In this section we examine these results in greater detail, and explore some of their widespread applications.
 
-The present document is a shortened version of my full write-up, and was created for the purposes of public engagement. Interested readers can access a far more detailed version
+The present document is a shortened version of my full write-up, and was created for the purposes of public engagement. Interested readers can access a far more detailed version \href{https://arismercier.github.io/GMT_Notes/GMT_Notes.pdf}{here}.
 
 
 \begin{comment}  
@@ -1212,6 +1212,7 @@ First, a sufficient condition for the rectifiability of a curve in \(\mathbb{R}^
 If \(\Gamma\) is a compact connected curve in \(\mathbb{R}^{n}\) with finite total curvature, then it has finite length.
 \end{theorem}
 
+\begin{comment}  
 \begin{proof}
 Let \(\gamma\) be a parametrisation of \(\Gamma\). We may assume that this is closed (if not, we close it up with a straight line segment). If \(\mathbf{u}\) is a unit vector, then the total variation of \(t \mapsto \gamma(t) \cdot \mathbf{u}\) is at most the diameter of \(\Gamma\) times the number of local extrema of \(\gamma(t) \cdot \mathbf{u}\). Averaging both sides of this inequality over all unit vectors \(\mathbf{u}\) gives
 \begin{equation}
@@ -1219,6 +1220,10 @@ c_{n}\operatorname{Length}(\Gamma) \leqslant \operatorname{diam}(\Gamma) \cdot \
 \end{equation}
 where the constant \(c_{n} > 0\) depends only on the dimension \(n\).
 \end{proof}
+\end{comment}
+
+
+Next, we wish to prove the existence of strong one-sided tangents. For this we first need the following preliminary lemma:
 
 \begin{lemma}[{\cite{EWW02}, Lemma 10.2}]
 \label{Existence of Strong One-sided Tangents}
@@ -1229,6 +1234,7 @@ be the unit vector pointing from \(\gamma(\xi)\) to \(\gamma(\eta)\).
 If \(a < x \leqslant y < b\), then the angle \(\angle(T_{ax}, T_{yb})\) between \(T_{ax}\) and \(T_{yb}\) is at most the total curvature of \(\gamma\) restricted to the open interval \((a,b)\).
 \end{lemma}
 
+\begin{comment}  
 \begin{proof}
 By the triangle inequality for geodesic distances in the unit sphere, we have that
 \begin{align*}
@@ -1236,6 +1242,8 @@ By the triangle inequality for geodesic distances in the unit sphere, we have th
 &\geqslant \angle(T_{ax}, T_{yb}).
 \end{align*}
 \end{proof}
+\end{comment}
+
 
 \begin{theorem}[{\cite{EWW02}, Theorem 10.3}]
 Suppose \(\gamma \vcentcolon [A,B] \rightarrow \mathbb{R}^{n}\) is an injective curve of finite total curvature. Then the strong one-sided tangents
@@ -1245,6 +1253,7 @@ T^{+}(a) = \lim_{\substack{a \leqslant x < y \\ y \rightarrow a}} T_{xy} \quad \
 exist for every \(a \in [A, B)\) and every \(b \in (A,B]\). Furthermore, \(T^{+}(x)\) and \(T_{-}(x)\) both approach \(T^{+}(a)\) as \(x\) approaches \(a\) from the right, and they both approach \(T_{-}(b)\) as \(x\) approaches \(b\) from the left.
 \end{theorem}
 
+\begin{comment}  
 \begin{proof}
 Let \(T\) be the limit of \(T_{ax}\) as \(x \rightarrow a\) with \(x > a\). Applying \cref{Existence of Strong One-sided Tangents} to \(\gamma \vert_{[a,y]}\), we get that
 \begin{equation}
@@ -1254,6 +1263,8 @@ for \(a < x < y < b\). Notice that as \(y \rightarrow a\) with \(y > a\), the ri
 
 Letting \(x \rightarrow y\) and then \(y \rightarrow a\) in the definition of \(T^{+}(a)\), we immediately read off that \(T_{-}(y) \rightarrow T^{+}(a)\) as \(y \rightarrow a\). If however, we let \(y \rightarrow x\) and then \(x \rightarrow a\), we get that \(T^{+}(x) \rightarrow T^{+}(a)\). The convergence to \(T_{-}(b)\) from the left is used analogously.
 \end{proof}
+\end{comment}
+
 
 
 \clearpage
