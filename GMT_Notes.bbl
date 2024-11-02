@@ -1,0 +1,49 @@
+\begin{thebibliography}{EWW02}
+
+\bibitem[EWW02]{EWW02}
+Tobias Ekholm, Brian White, and Daniel Wienholtz.
+\newblock \emph{Embeddedness of Minimal Surfaces with Total Boundary Curvature at most $4\pi$.}
+\newblock Ann. of Math. (2), Vol. 155 (2002), no. 1, 209–234, January 2002.
+\newline DOI: \url{https://doi.org/10.2307/3062155}.
+
+\bibitem[Far49]{Far49}
+Istvan Fary.
+\newblock \emph{Sur la courbure totale d’une courbe gauche faisant un n\oeud.}
+\newblock Bulletin de la Soci{\'e}t{\'e} Math{\'e}matique de France, Vol. 77 (1949), 128–138, 1949.
+\newline URL: \url{https://eudml.org/doc/86831}.
+
+\bibitem[Mil50]{Mil50}
+John Willard Milnor.
+\newblock \emph{On the total curvature of knots.}
+\newblock Ann. of Math. (2), Vol. 55 (1950), no. 2, 248–257, September 1950.
+\newline DOI: url{https://doi.org/10.2307/1969467}.
+
+\bibitem[Mor16]{Mor16}
+Frank Morgan.
+\newblock \emph{Geometric Measure Theory: A Beginner's Guide}.
+\newblock  Academic Press, Fifth Edition, 2016.
+\newline DOI: \url{https://doi.org/10.1016/c2015-0-01918-9}.
+
+\bibitem[MY82]{MY82}
+William H. Meeks and Shing-Tung Yau.
+\newblock emph{The classical Plateau problem and the topology of three-dimensional manifolds.}
+\newblock Topology, Vol. 21, Issue 4, 409–442, 1982.
+\newline DOI: \url{https://doi.org/10.1016/0040-9383(82)90021-0}.
+
+\bibitem[Rin22]{Rin22}
+Filip Rindler.
+\newblock \emph{MA4M5: Geometric Measure Theory}.
+\newblock Lecture Notes for the Academic Year 2022/23, University of Warwick.
+
+\bibitem[Sim18]{Sim18}
+Leon Simon.
+\newblock \emph{Introduction to Geometric Measure Theory}, 2018.
+\newline URL: \url{https://math.stanford.edu/~lms/ntu-gmt-text.pdf}.
+
+\bibitem[Whi16]{Whi16}
+Brian White.
+\newblock \emph{Lectures on Minimal Surface Theory.}
+\newblock IAS/Park City Mathematics Series, Vol. 22, 387–438, 2016.
+\newline DOI: \url{https://doi.org/10.48550/arXiv.1308.3325}.
+
+\end{thebibliography}
