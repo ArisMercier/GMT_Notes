@@ -86,13 +86,12 @@
 
 \begin{document}
 \maketitle
-%\tableofcontents
-%\newpage
+\tableofcontents
+\newpage
 
 \epigraph{\emph{No one will read this except you and me.}}{― F. Schulze}
 \section{Introduction}
 
-\begin{comment}
 In the summer of 2024, I completed a research project at the University of Warwick under the supervision of Professor Felix Schulze. This document contains a write-up of my work during this time.
 
 
@@ -101,7 +100,6 @@ In the summer of 2024, I completed a research project at the University of Warwi
 \cref{Paper} presents an exposition on the research paper \cite{EWW02} by Tobias Ekholm, Brian White, and Daniel Wienholtz. This paper proves a sufficient condition for the embeddedness of minimal surfaces, and moreover imposes certain restrictions on the topology of such surfaces. In this section we examine these results in greater detail, and explore some of their widespread applications.
 
 The work presented in this document is entirely expository. In particular, I claim absolutely no originality over its contents. I would like to thank all those who inspired and helped me along the way, for the quality of this work would be much poorer without them.
-\end{comment}
 
 In the summer of 2024, I completed a research project at the University of Warwick under the supervision of Professor Felix Schulze. This document contains a write-up of my work during this time.
 
@@ -110,7 +108,7 @@ In particular, we present an exposition on the research paper \cite{EWW02} by To
 The present document is a shortened version of my full write-up, and was created for the purposes of public engagement. Interested readers can access a far more detailed version \href{https://arismercier.github.io/GMT_Notes/GMT_Notes.pdf}{here}.
 
 
-\begin{comment}  
+  
 \section{Preliminaries}
 \label{Preliminaries}
 
@@ -859,7 +857,7 @@ where \(G(\rho, \sigma) \in \bigl[e^{-\Lambda}, e^{\Lambda}\bigr]\) and \(0 < \s
 \rho \longmapsto\!F(\rho)\rho^{-n}\mu_{V}(B_{\rho}(x_0)) + E(\rho)
 \end{equation}
 is increasing on the interval \((0, R]\). Arguing as above, we can conclude that the density \(\Theta^{n}(\mu_{V}, x_{0})\) exists for all \(x_{0} \in U\), and is an upper semicontinuous function on \(U\).
-\end{comment}
+
 
 \section{On the Embeddedness of Minimal Surfaces}
 \label{Paper}
@@ -900,7 +898,7 @@ is an increasing function of \(r\) for all \(r > 0\). That is,
 with equality if and only if \(M'\) is a cone.
 \end{theorem}
 
-\begin{comment}
+
 \begin{proof}
 Without loss of generality, we may assume that \(p = 0\). We denote by \(M_{r}\), \(E_{r}\), \(M_{r}'\), and \(\Gamma_{r}\) respectively the portions of \(M\), \(E\), \(M'\), and \(\Gamma\) which lie inside the ball \(B(0, r)\).  
 
@@ -938,7 +936,7 @@ A'(r) - nr^{-1}A(r) \geqslant 0,
 \end{equation}
 so \(\frac{\!\diff}{\diff r} (r^{-n}A(r)) \geqslant 0\). But \(r^{-n}A(r)\) is exactly the density ratio (up to a constant multiple of \(\omega_{n}\)), so we are done.
 \end{proof}
-\end{comment}
+
 
 \subsection{Interior Regularity}
 
@@ -959,7 +957,7 @@ Let \(M\) be a minimal surface in \(\mathbb{R}^{n}\) with rectifiable boundary \
 with equality if and only if \(M = \operatorname{Cone}(\Gamma, p)\).
 \end{theorem}
 
-\begin{comment}
+
 \begin{proof}
 Since \(\Gamma\) is rectifiable, we can assume that \(\operatorname{Length}(\Pi_{p}(\Gamma)) < \infty\) or, equivalently, that \(\Theta^{2}(\operatorname{Cone}(\Gamma, p), p) < \infty\). 
 
@@ -989,7 +987,7 @@ from which we have that
 \end{equation}
 Since \(\Pi_{p}\Gamma\) has finite length, the mapping \(A \mapsto \operatorname{Length}(\Pi_{p}\Gamma \vert_{A})\) defines a finite Borel measure on \(G\), where \(G\) is a parameter domain for \(\Gamma \setminus \{p\}\). As \(r \rightarrow 0\), \(\Gamma^{-1}(\mathbb{R}^{n} \setminus B(p,r))\) exhausts \(G\), and thus \(\operatorname{Length}(\Pi_{p}(\Gamma \cap B(p, r)))\) tends to \(0\). Therefore we get \(\Theta^{2}(E, p, r) \rightarrow 0\), as required.
 \end{proof}
-\end{comment}
+
 
 \begin{theorem}[{\cite[Theorem 1.1]{EWW02}}]
 \label{Interior_Regularity_2}
@@ -1010,7 +1008,7 @@ Equivalently,
 
 Two proofs can be found in \cite{EWW02}, one using the Gau\ss--Bonnet theorem, and a second using the integral geometric formulas from \cite{Mil50}.
 
-\begin{comment}
+
 We give a proof based on the Gau\ss --Bonnet theorem. The paper also contains a second proof using integral geometry.
 
 \begin{proof}
@@ -1031,7 +1029,7 @@ The first of integrals above is equal to the length of \(\Pi_{p}\Gamma\), while 
 
 This completes the proof when \(\Gamma\) is smooth. If \(\Gamma\) is polygonal, we approximate it by smooth curves. For more general curves, we take the supremum over all inscribed polygonal curves.
 \end{proof}
-\end{comment}
+
 
 We can now combine these intermediate results to improve on the interior regularity of our surface:
 
@@ -1040,7 +1038,7 @@ We can now combine these intermediate results to improve on the interior regular
 Let \(\Gamma\) be a simple closed curve in \(\mathbb{R}^{n}\) with total curvature at most \(4\pi\), and let \(M\) be a minimal surface with boundary \(\Gamma\). Then the interior of \(M\) is embedded, and contains no branch points.
 \end{theorem}
 
-\begin{comment}
+
 \begin{proof}
 Since \(\Gamma\) has finite total curvature, \cref{Basic_Property_1} implies that it is also rectifiable, so we may apply Theorems \ref{Interior_regularity_basic_estimate} and \ref{Interior_Regularity_2}. If \(M\) is contained in a cone, then both its mean and scalar curvatures vanish, and so \(M\) is locally planar. If \(M\) is not contained in any cone, then we have a strict inequality in \cref{Interior_regularity_basic_estimate}, and so we have the following estimate:
 \begin{equation}
@@ -1048,7 +1046,7 @@ Since \(\Gamma\) has finite total curvature, \cref{Basic_Property_1} implies tha
 \end{equation}
 But we know that the density of \(M\) at any interior branch point or self-intersection point is at least \(2\), so \(p\) cannot be such a point. Hence the interior of \(M\) must be smoothly embedded.
 \end{proof}
-\end{comment}
+
 
 From \cref{Interior_Regularity_3}, the F{\'a}ry--Milnor theorem follows as a simple corollary.  This is a fundamental result linking the geometry and topology of a simple closed curve in \(\mathbb{R}^{3}\). It was proven independently by Istv{\'a}n F{\'a}ry in 1949 and by John Milnor in 1950.
 
@@ -1077,7 +1075,7 @@ Let \(\Gamma\) be a simple closed curve in \(\mathbb{R}^{n}\) with finite total 
 where \(\theta\) is the exterior angle to \(\Gamma\) at \(p\).
 \end{theorem}
 
-\begin{comment}  
+  
 \begin{proof}
 For \(r > 0\) sufficiently small, let \(a_{r}\) and \(b_{r}\) be the intersections of \(\Gamma\) with \(\partial B(p, r)\). Let \(\theta (r)\) be the exterior angle of the triangle \(\triangle a_{r} p b_{r}\) at the vertex \(p\). Let \(q\) be a point sufficiently close to \(p\) such that \(p\) is in the interior of the triangle \(\triangle a_{r} q b_{r}\), but not in the line segments \(\overline{a_{r} q}\) or \(\overline{q b_{r}}\).
 
@@ -1097,7 +1095,7 @@ We now let \(q \rightarrow p\) to obtain:
 
 Letting \(r \rightarrow 0\) yields the required result.
 \end{proof}
-\end{comment}
+
 
 
 We are now ready to prove regularity at the boundary. We first do this for \emph{smooth} boundary curves, before dealing with more general curves.
@@ -1106,7 +1104,7 @@ We are now ready to prove regularity at the boundary. We first do this for \emph
 Let \(\Gamma\) be a smooth simple curve in \(\mathbb{R}^{n}\) with total curvature at most \(4\pi\), and let \(M\) be a minimal surface with boundary \(\Gamma\). Then \(M\) is a smoothly embedded manifold with boundary.
 \end{theorem}
 
-\begin{comment}  
+  
 \begin{proof}
 We know from \cref{Interior_Regularity_3} that the interior of \(M\) is smoothly embedded. Now pick a point \(p \in \Gamma\). As in the proof of  \cref{Interior_Regularity_3}, we may assume a strict inequality in \ \cref{Interior_regularity_basic_estimate}. Then by Theorems \ref{Interior_regularity_basic_estimate} and \ref{Boundary_Regularity_1}, we have that
 \begin{equation}
@@ -1114,7 +1112,7 @@ We know from \cref{Interior_Regularity_3} that the interior of \(M\) is smoothly
 \end{equation}
 But any boundary branch point has density at least \(3/2\), and similarly for any point at which \(M\) is not embedded.
 \end{proof}
-\end{comment}
+
 
 
 \subsection{Boundaries with Corners}
@@ -1132,7 +1130,7 @@ Let \(\Gamma\) be a simple closed curve in \(\mathbb{R}^{n}\) with total curvatu
 \end{enumerate}
 \end{theorem}
 
-\begin{comment}
+
 \begin{proof}
 Let \(T\) be a tangent cone to \(M\) at \(p\). Since \(p \in \Gamma\), the cone \(T\) consists of two rays with an interior angle of \(\pi - \theta\). We now consider the intersection \(S\) of \(T\) with the unit sphere. Then \(S\) will consist of one or more geodesic curves. This is because the intersection of the tangent cone with the unit sphere is a one-dimensional varifold that is stationary in the sphere. But such one-dimensional stationary varifolds must consist of geodesic arcs.
 
@@ -1158,7 +1156,7 @@ Note that this forces \(k = 0\). If \(p\) is a cusp (so \(\theta = \pi)\), then 
 
 Finally, if \(p \in \Gamma\) coincided with an interior point of \(M\), then \(S\) would indeed contain at least one great circle, which we have just demonstrated is not possible. Therefore \(M\) is embedded.
 \end{proof}
-\end{comment}
+
 
 
 \subsection{Nondisc-type Surfaces}
@@ -1213,7 +1211,7 @@ First, a sufficient condition for the rectifiability of a curve in \(\mathbb{R}^
 If \(\Gamma\) is a compact connected curve in \(\mathbb{R}^{n}\) with finite total curvature, then it has finite length.
 \end{theorem}
 
-\begin{comment}  
+  
 \begin{proof}
 Let \(\gamma\) be a parametrisation of \(\Gamma\). We may assume that this is closed (if not, we close it up with a straight line segment). If \(\mathbf{u}\) is a unit vector, then the total variation of \(t \mapsto \gamma(t) \cdot \mathbf{u}\) is at most the diameter of \(\Gamma\) times the number of local extrema of \(\gamma(t) \cdot \mathbf{u}\). Averaging both sides of this inequality over all unit vectors \(\mathbf{u}\) gives
 \begin{equation}
@@ -1221,7 +1219,7 @@ c_{n}\operatorname{Length}(\Gamma) \leqslant \operatorname{diam}(\Gamma) \cdot \
 \end{equation}
 where the constant \(c_{n} > 0\) depends only on the dimension \(n\).
 \end{proof}
-\end{comment}
+
 
 
 Next, we wish to prove the existence of strong one-sided tangents. For this we first need the following preliminary lemma:
@@ -1235,7 +1233,7 @@ be the unit vector pointing from \(\gamma(\xi)\) to \(\gamma(\eta)\).
 If \(a < x \leqslant y < b\), then the angle \(\angle(T_{ax}, T_{yb})\) between \(T_{ax}\) and \(T_{yb}\) is at most the total curvature of \(\gamma\) restricted to the open interval \((a,b)\).
 \end{lemma}
 
-\begin{comment}  
+  
 \begin{proof}
 By the triangle inequality for geodesic distances in the unit sphere, we have that
 \begin{align*}
@@ -1243,7 +1241,7 @@ By the triangle inequality for geodesic distances in the unit sphere, we have th
 &\geqslant \angle(T_{ax}, T_{yb}).
 \end{align*}
 \end{proof}
-\end{comment}
+
 
 
 \begin{theorem}[{\cite{EWW02}, Theorem 10.3}]
@@ -1254,7 +1252,7 @@ T^{+}(a) = \lim_{\substack{a \leqslant x < y \\ y \rightarrow a}} T_{xy} \quad \
 exist for every \(a \in [A, B)\) and every \(b \in (A,B]\). Furthermore, \(T^{+}(x)\) and \(T_{-}(x)\) both approach \(T^{+}(a)\) as \(x\) approaches \(a\) from the right, and they both approach \(T_{-}(b)\) as \(x\) approaches \(b\) from the left.
 \end{theorem}
 
-\begin{comment}  
+  
 \begin{proof}
 Let \(T\) be the limit of \(T_{ax}\) as \(x \rightarrow a\) with \(x > a\). Applying \cref{Existence of Strong One-sided Tangents} to \(\gamma \vert_{[a,y]}\), we get that
 \begin{equation}
@@ -1264,7 +1262,7 @@ for \(a < x < y < b\). Notice that as \(y \rightarrow a\) with \(y > a\), the ri
 
 Letting \(x \rightarrow y\) and then \(y \rightarrow a\) in the definition of \(T^{+}(a)\), we immediately read off that \(T_{-}(y) \rightarrow T^{+}(a)\) as \(y \rightarrow a\). If however, we let \(y \rightarrow x\) and then \(x \rightarrow a\), we get that \(T^{+}(x) \rightarrow T^{+}(a)\). The convergence to \(T_{-}(b)\) from the left is used analogously.
 \end{proof}
-\end{comment}
+
 
 
 
